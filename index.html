@@ -5,10 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> UltraShare | Start </title>
   <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-  <h1>Start</h1>
+<body id="bodyStart">
+  <div id="titleWrapper">
+    <h1 class="title">Bienvenidos a <span>UltraShare</span>!</h1>
+    <h2 class="subtitle">Conexión saludable y cercana.</h2>
+  </div>
 
+  <div id="startContentWrapper">
+    <div id="buttonWrapper">
+      <button class="primaryButton" onclick="goto('/login')">Iniciar sesión</button>
+      <button class="secondaryButton" onclick="goto('/register')">Registrarme</button>
+    </div>
+
+    <div id="Content">
+      <div class="infoCardWrapper">
+        <div class="cardInfo">
+          <img src="/public/images/start_1.jpg" alt="Imagen decorativa">
+          <p>"¡Hola! ¡Bienvenido a Ultrashare!. Somos tu fuente confiable de información sobre salud y bienestar. En Ultrashare, sabemos lo importante que es tener una conexión saludable y cercana con tu cuerpo y tu salud. Nuestro objetivo es brindarte orientación experta y recursos útiles para comprender tus resultados de ultrasonidos. Únete a nuestra comunidad hoy mismo y da el primer paso hacia una vida más informada y saludable. ¡Estamos aquí para ayudarte!"</p>
+        </div>
+      </div>
+
+      <div class="infoCardWrapper">
+        <div class="cardInfo">
+          <img src="/public/images/start_1.jpg" alt="Imagen decorativa">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A magnam sed molestias inventore! Consequatur ex, atque debitis, velit placeat eos consequuntur pariatur unde ab reiciendis minus corporis sit, quaerat excepturi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="/main.js"></script>
 </body>
 </html>
