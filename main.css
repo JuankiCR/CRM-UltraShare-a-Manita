@@ -4,15 +4,18 @@
   --text: #0a1214;
   --text-secundary: #6d6d6d;
   --background: #f8fafc;
-  --card-bg: #eef7fb;
-  --card-bg-alt: #eef6f8;
+  --card-bg: #c7eeff;
+  --card-bg-alt: #c7eeff66;
   --primary: #35bfed;
   --secondary: #9acedf;
   --accent: #68b9d4;  
+  --divider-color: #6d6d6d69;
 
   --l-radius : 24px;
   --m-radius : 16px;
   --s-radius : 8px;
+
+  --max-width: 1200px;
 }
 
 *{
@@ -40,7 +43,7 @@ body{
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--text);
 }
 
@@ -56,9 +59,14 @@ body{
   color: var(--text-secundary);
 }
 
+/* Divider */
+.divider{
+  border-bottom:1px solid var(--divider-color);
+}
+
 /* Botones */
 .primaryButton{
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -69,7 +77,7 @@ body{
 }
 
 .primaryButton:hover{
-  background-color: var(--primary);
+  background-color: var(--secondary);
 }
 
 .secondaryButton{
@@ -77,7 +85,7 @@ body{
   color: var(--primary);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary);
   cursor: pointer;
   font-size: 1.3rem;
   transition: 0.3s;
