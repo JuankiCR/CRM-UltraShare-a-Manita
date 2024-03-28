@@ -10,12 +10,18 @@
   --secondary: #9acedf;
   --accent: #68b9d4;  
   --divider-color: #6d6d6d69;
+  --topbar-color: #59cdff66;
+  --aside-color: #c7eeff66;
 
   --l-radius : 24px;
   --m-radius : 16px;
   --s-radius : 8px;
 
   --max-width: 1200px;
+  --aside-width: 250px;
+  --nav-height: 80px;
+
+  --link-icon-size: 1.5rem;
 }
 
 *{

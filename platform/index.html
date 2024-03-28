@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> UltraShare | Dashboard </title>
+  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/platform/style.css">
+  
+</head>
+<body>
+  <header id="topBar">
+    <div id="logoWrapper">
+      <img src="/public/logos/logo_text.svg" alt="Logo de UltraShare">
+    </div>
+  </header>
+
+  <div id="appWrapper">
+    <aside id="funtionsWrapper">
+      <nav id="linkList">
+        <div id="Dashboard" class="navLink active" onclick="navegateTo('Dashboard', this)">
+          <div class="linkIco"></div>
+          <div class="linkText">Dashboard</div>
+        </div>
+        
+        <div id="UploadImage" class="navLink" onclick="navegateTo('LoadImage', this)">
+          <div class="linkIco"></div>
+          <div class="linkText">Subir imagen</div>
+        </div>
+
+        <div id="SendMessage" class="navLink" onclick="navegateTo('SendMessage', this)">
+          <div class="linkIco"></div>
+          <div class="linkText">Enviar mensaje</div>
+        </div>
+
+        <div id="TestMessage" class="navLink" onclick="navegateTo('TestMessage', this)">
+          <div class="linkIco"></div>
+          <div class="linkText">Test mensaje</div>
+        </div>
+      </nav>
+    </aside>
+    <main id="contentWrapper">
+    </main>
+  </div>
+
+  <script src="/main.js"></script>
+  <script src="/platform/script.js"></script>
+  <script>
+    window.onload = function() {
+      navegateTo('Dashboard', Dashboard);
+    }
+  </script>
+</body>
+</html>

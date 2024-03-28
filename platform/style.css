@@ -1,0 +1,80 @@
+#topBar{
+  display: flex;
+  height: var(--nav-height);
+  background-color: var(--topbar-color);
+  padding: 0 2rem;
+  justify-content: center;
+}
+
+#logoWrapper{
+  aspect-ratio: 1;
+  height: 100%;
+}
+
+#logoWrapper img{
+  height: 100%;
+}
+
+#appWrapper{
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - var(--nav-height));
+  overflow: hidden;
+}
+
+#funtionsWrapper,
+#contentWrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#funtionsWrapper{
+  width: var(--aside-width);
+  background-color: var(--aside-color);
+  padding: 1rem;
+}
+
+#contentWrapper{
+  width: calc(100% - var(--aside-width));
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Menu lateral */
+#linkList{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navLink{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.navLink:hover{
+  background-color: var(--card-bg-alt);
+  cursor: pointer;
+}
+
+.navLink .linkIco{
+  aspect-ratio: 1;
+  background-color: var(--text-secundary);
+  width: var(--link-icon-size);
+  transition: background-color 0.2s;
+}
+
+.navLink:hover .linkIco,
+.navLink.active .linkIco{
+  background-color: var(--primary);
+}
+
+#linkList #Dashboard>.linkIco{ mask: url(/public/icons/dashboard.svg) center/contain no-repeat; }
+#linkList #UploadImage>.linkIco{ mask: url(/public/icons/upload_img.svg) center/contain no-repeat; }
+#linkList #SendMessage>.linkIco{ mask: url(/public/icons/send_msg.svg) center/contain no-repeat; }
+#linkList #TestMessage>.linkIco{ mask: url(/public/icons/test_msg.svg) center/contain no-repeat; }
