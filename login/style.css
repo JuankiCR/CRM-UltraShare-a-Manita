@@ -3,7 +3,6 @@ body{
     background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el cuerpo */
     background-position: center; /* Centra la imagen de fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-
 }
 .Contenedor{
     display: flex;
