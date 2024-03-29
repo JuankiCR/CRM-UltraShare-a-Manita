@@ -1,32 +1,59 @@
+:root{
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+    
+    --text: #0a1214;
+    --text-secundary: #6d6d6d;
+    --background: #f8fafc;
+    --card-bg: #c7eeff;
+    --card-bg-alt: #c7eeff66;
+    --primary: #35bfed;
+    --secondary: #9acedf;
+    --accent: #68b9d4;  
+    --divider-color: #6d6d6d69;
+    --topbar-color: #59cdff66;
+    --aside-color: #c7eeff66;
+  
+    --l-radius : 24px;
+    --m-radius : 16px;
+    --s-radius : 8px;
+  
+    --max-width: 1200px;
+    --aside-width: 250px;
+    --nav-height: 80px;
+  
+    --link-icon-size: 1.5rem;
+}
+
 body{
-    background-image: url("../public/assets/imagen_de_fondo.png");
+    background-image: url("../public/decoration/imagen_de_fondo_login.png");
     background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el cuerpo */
     background-position: center; /* Centra la imagen de fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-
+    background-attachment: fixed;
 }
-.Contenedor{
+.Contenedor {
     display: flex;
     align-items: center;
-    background-color:rgba(210, 238, 248, 0.5);;
-    height: 880px;
-    width: 1490px;
-    margin-top: 5rem;
-    margin-left: 26rem;
-
+    justify-content: center; /* Centra horizontalmente */
+    background-color: rgba(210, 238, 248, 0.5);
+    height: auto;
+    max-width: 90%;
+    margin: 5rem auto; /* Centra vertical y horizontalmente */
+    border-radius: var(--s-radius);
 }
 .ContenedorLoginBtn {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem; /* Aumenta el espacio entre elementos */
-    background-color: rgb(255, 255, 255,0.6);
-    width: 900px; /* Modifica el ancho según tu preferencia */
-    height: 650px; /* Modifica la altura según tu preferencia */
-    padding: 1.6rem 1rem; /* Aumenta el padding */
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 90%;
+    max-width: 900px;
+    height: auto;
+    padding: 1.6rem 1rem;
     border-radius: 8px;
-    margin-left: 18rem;
+    margin: 0 auto; /* Centra horizontalmente */
 }
 
 .LoginI {
