@@ -36,9 +36,10 @@ async function enviarFormulario() {
             window.location.href = `/platform/`;
 
         } else {
-            console.log("Datos incorrectos. Por favor, inténtalo de nuevo.");
+            alert("Datos incorrectos. Por favor, inténtalo de nuevo.");
+            
         }
     } catch (error) {
-        console.log("Ocurrió un error: " + error.message);
+        alert("Ocurrió un error: " + error.message);
     }
 }
