@@ -1,0 +1,28 @@
+.containerP {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.containertexA {
+    width: 90%; 
+    max-width: 600px; 
+    margin: auto;
+    margin-top: 20px;
+    text-align: center; 
+}
+  
+.textArea1 {
+    width: 100%; 
+    height: 300px; 
+    resize: none; 
+    box-sizing: border-box; 
+}
+
+.buttontextArea {
+    margin-top: 10px; 
+}
+h1{
+    font-size: 1.8rem;
+    text-align: center;
+}
