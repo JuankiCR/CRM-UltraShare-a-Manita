@@ -37,7 +37,7 @@ const setClicledLnks = (linkClicked) => {
 }
 
 const checkUser = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('userD'));
   if (!user) {
     window.location.href = '/';
   }
