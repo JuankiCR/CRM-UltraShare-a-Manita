@@ -1,5 +1,3 @@
-alert("Hola test enviado!");
-
 //función para enviar mensaje de test:
 async function enviarMensajeTest() {
     const message = document.querySelector('.textArea1').value; 

@@ -1,12 +1,25 @@
 <link rel="stylesheet" href="/platform/send_message/style.css">
 <link rel="stylesheet" href="/main.css">
-<h1>
-  Enviar mensaje
-</h1>
-<h2>Lista de Clientes</h2>
-<div class="cuadroC" id="cuadroC">
-  <div class="clienteL-container" onclick="listaClienteDropdown()">
-    Seleccionar cliente
-    <div class="cliente-dropdown" id="clienteDropdown"></div>
+
+<section id="pageWrapper">
+  <h1>Enviar mensaje.</h1>
+  <div id="optionsWrapper">
+    <div id="userSelectorWrapper" class="optionsWrapper">
+      <h2>Seleccione el usuario.</h2>
+      <div id="userSelector" class="itemSelector">
+      </div>
+    </div>
+    <div id="mediaSelectorWrapper" class="optionsWrapper">
+      <h2>Seleccione el archivo.</h2>
+      <div id="mediaSelector" class="itemSelector">
+        Selecione un usuario.
+      </div>
+    </div>
   </div>
-</div>
+  <div id="messageWrapper">
+    <textarea id="message" placeholder="Escribe tu mensaje aquí."></textarea>
+  </div>
+  <div id="buttonsWrapper">
+    <button id="sendButton" class="primaryButton">Enviar</button>
+  </div>
+</section>
