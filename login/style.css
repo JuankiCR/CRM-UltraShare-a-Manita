@@ -11,8 +11,8 @@ body{
     justify-content: center; /* Centra horizontalmente */
     background-color: rgba(210, 238, 248, 0.5);
     height: auto;
-    max-width: 90%;
-    margin: 5rem auto; /* Centra vertical y horizontalmente */
+    max-width: 40%;
+    margin: 7rem auto; /* Centra vertical y horizontalmente */
     border-radius: var(--s-radius);
 }
 .ContenedorLoginBtn {
@@ -22,7 +22,7 @@ body{
     justify-content: center;
     gap: 1rem;
     background-color: rgba(255, 255, 255, 0.6);
-    width: 90%;
+    width: 60%;
     max-width: 900px;
     height: auto;
     padding: 1.6rem 1rem;
@@ -42,7 +42,7 @@ body{
 }
 
 .Inputs > input {
-    font-size: 1.8rem; /* Reduce el tamaño del texto de los inputs */
+    font-size: 1.5rem; /* Reduce el tamaño del texto de los inputs */
     padding: 0.5rem; /* Aumenta el padding */
     text-align: center;
 }
@@ -74,5 +74,14 @@ h2 {
     color: black;
     text-align: center;
 }
+@media screen and (max-width: 1000px){
+    .Contenedor {
+        max-width: 90%;
+    }
+    .ContenedorLoginBtn {
+        
+        width: 90%;
+    }
 
+}
 

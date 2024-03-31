@@ -1,0 +1,40 @@
+.clienteL-container {
+    width: auto;
+    height: 40px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+  }
+.clienteL-container:hover {
+    background-color: #e0e0e0; /* Color de fondo al pasar el ratón por encima */
+}
+.cuadroC {
+    width: 750px;
+    height: 350px;
+    /*background-color: #f0f0f0;*/
+    border: 1px solid #0b0b0b; 
+}
+.cliente-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 1;
+}
+
+
+  .cliente-dropdown.active {
+    display: block;
+  }
+
+  .cliente-dropdown-item {
+    padding: 5px;
+    cursor: pointer;
+  }
