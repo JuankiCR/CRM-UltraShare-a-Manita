@@ -32,6 +32,12 @@
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
 }
 
 body{
@@ -68,6 +74,15 @@ body{
 /* Divider */
 .divider{
   border-bottom:1px solid var(--divider-color);
+}
+
+/* Selectable */
+.selectable *{
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -o-user-select: text;
 }
 
 /* Botones */
