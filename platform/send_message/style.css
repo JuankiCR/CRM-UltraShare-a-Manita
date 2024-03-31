@@ -40,6 +40,7 @@
   width: 100%;
 }
 
+/*Clase definida en el archivo de javaScript*/
 .userOption{
   transition: color ease 0.3s, background-color ease 0.3s;
   background-color: transparent;
@@ -62,6 +63,27 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+/*Diseño para indicar que imagen está siendo seleccionada*/
+.mediaOption{
+  cursor: pointer;
+
+}
+.mediaOption:hover, .mediaOption.active{
+  background-color: var(--accent);
+}
+
+.mediaOption img,
+.mediaOption video {
+      max-width: 100%;
+      height: auto;
+}
+
+.mediaOption {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 0.5px solid #ccc;
+}
+
 
 #messageWrapper textarea{
   border: 1px solid var(--divider-color);

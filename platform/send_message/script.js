@@ -1,5 +1,7 @@
 const userSelector = document.getElementById('userSelector');
 const mediaSelector = document.getElementById('mediaSelector');
+const messageTextarea = document.getElementById('message');
+const sendButton = document.getElementById('sendButton');
 var selectedClient = null;
 var selectedMedia = null;
 
@@ -7,6 +9,23 @@ const onLoadScript = () => {
   cargarUsuarios();
 }
 
+// Ocultar el botón 
+sendButton.style.display = 'none';
+
+// Función para mostrar u ocultar el botón según las condiciones
+function cambiarEstadoBoton() {
+
+  if (selectedClient !== null && selectedMedia !== null && messageTextarea.value.trim() !== '') {
+    sendButton.style.display = 'block'; // Mostrar el botón 
+  } else {
+    sendButton.style.display = 'none'; 
+  }
+}
+
+// Agregar evento de escucha al textarea
+messageTextarea.addEventListener('input', cambiarEstadoBoton);
+
+//Selección del cliente:
 const setClient = (clientID, elemetClicked) => {
   userOptionsList = document.querySelectorAll('#userSelector .userOption');
   selectedClient = clientID;
@@ -19,13 +38,23 @@ const setClient = (clientID, elemetClicked) => {
 
   cargarMedios(clientID);
   console.log('Cliente seleccionado:', selectedClient);
+  cambiarEstadoBoton();
 }  
 
-const setMedia = (mediaID) => {
+//Selección del archivo seleccionado:
+const setMedia = (mediaID,elemetClicked) => {
+  mediaOptionsList = document.querySelectorAll('#mediaSelector .mediaOption');
   selectedMedia = mediaID;
-  console.log('Media seleccionado:', selectedMedia);
+  mediaOptionsList.forEach(mediaOption => {
+    mediaOption.classList.remove('active');
+  });
+  elemetClicked.classList.add('active');
+
+  console.log('Archivo seleccionado:', selectedMedia);
+  cambiarEstadoBoton();
 }
 
+//Función que muestra la lista de usuarios
 const cargarUsuarios = () => {
   let apiURL = 'https://api-ultrashare.juankicr.dev/client/list';
 
@@ -50,6 +79,7 @@ const cargarUsuarios = () => {
   });
 }
 
+//Función para mostrar los archivos
 const cargarMedios = (client_id) => {
   let apiURL = `https://api-ultrashare.juankicr.dev/client/media/list`;
 
@@ -70,15 +100,15 @@ const cargarMedios = (client_id) => {
     let preview = '';
     media.forEach(medium => {
       if (medium.file_type === 'video') {
-        preview = `<video src="${medium.file_url}" style="width: 100px;"></video>`;
+        preview = `<video src="${medium.file_url}" style="width: 215px;"></video>`;
       }else if (medium.file_type === 'imagen'){
-        preview = `<img src="${medium.file_url}" style="width: 100px;"></img>`;
+        preview = `<img src="${medium.file_url}" style="width: 215px;"></img>`;
       }else{
         preview = `<p>Archivo no soportado</p>`;
       }
 
       mediaOptions += `        
-        <div id="Medio_${medium._id}" class="mediaOption" onclick="setMedia('${medium._id}')">
+        <div id="Medio_${medium._id}" class="mediaOption" onclick="setMedia('${medium._id}', this)">
           ${preview}
           <p>${medium.file_type} ${medium._id}</p>
         </div>
@@ -90,43 +120,14 @@ const cargarMedios = (client_id) => {
   });
 }
 
+/*Función para mandar en consola el contenido de textarea, el cliente seleccionado, y el archivo seleccionado*/
+function sendMessage() {
+  console.log('Contenido en el textarea: ', messageTextarea.value);
+  console.log('Cliente seleccionado:', selectedClient);
+  console.log('Archivo seleccionado:', selectedMedia);
+}
+
+sendButton.addEventListener('click', sendMessage);
+
+
 onLoadScript();
-// //Función para la Lista de clientes
-// function listaClienteDropdown() {
-//   const dropdown = document.getElementById('clienteDropdown');
-//   dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-
-//   const clienteContainer = document.querySelector('.clienteL-container');
-//   if (clienteContainer.textContent.trim() === "Seleccionar cliente") {
-//     obtenerListaClientes(); 
-//   }
-// }
-
-// function selectCliente(cliente) {
-//   const clienteContainer = document.querySelector('.clienteL-container');
-//   clienteContainer.textContent = cliente.nombre + ' ' + cliente.apellidos;
-
-// }
-
-// function obtenerListaClientes() {
-//   fetch("https://api-ultrashare.juankicr.dev/client/list")
-//     .then(response => {
-//       if (!response.ok) {
-//         throw new Error("Error al obtener la lista de clientes.");
-//       }
-//       return response.json();
-//     })
-//     .then(data => {
-//       const clientesDropdown = document.getElementById("clienteDropdown");
-//       clientesDropdown.innerHTML = ''; 
-//       const clients = data.clients;
-//       clients.forEach(cliente => {
-//         const clienteElement = document.createElement("div");
-//         clienteElement.classList.add("cliente-dropdown-item");
-//         clienteElement.textContent = `${cliente.nombre} ${cliente.apellidos}`;
-//         clienteElement.onclick = () => selectCliente(cliente);
-//         clientesDropdown.appendChild(clienteElement);
-//       });
-//     })
-//     .catch(error => console.error("Error al obtener la lista de clientes:", error));
-// }
