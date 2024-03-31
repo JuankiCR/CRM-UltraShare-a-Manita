@@ -53,3 +53,4 @@ function checkUser() {
 window.onload = function() {
   navegateTo('Dashboard', document.getElementById('Dashboard'));
 };
+
